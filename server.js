@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
 const Schema = mongoose.Schema;
 const routes = require('./routes.js');
+const cors = require('cors');
 
 // Use bluebird Promise Library since mongoose promise is depreceated
 mongoose.Promise = require('bluebird');
@@ -21,6 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + ''));
+
+app.use(cors());
 
 // REGISTER OUR ROUTES -------------------------------
   // all of our routes will be prefixed with /api
