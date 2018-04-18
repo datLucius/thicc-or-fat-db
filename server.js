@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
-const mongoURI = process.env.MONGODB_URI;
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoURI = process.env.MONGODB_URI;
 const port = process.env.PORT || 3000;
 const Schema = mongoose.Schema;
 const routes = require('./routes.js');
-const cors = require('cors');
 
 // Use bluebird Promise Library since mongoose promise is depreceated
 mongoose.Promise = require('bluebird');
