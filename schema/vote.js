@@ -6,6 +6,6 @@ const voteSchema = new Schema({
   fat: Number
 }, {collection: 'Vote'})
 
-const User = mongoose.model('Vote', voteSchema);
+const Vote = mongoose.model('Vote', voteSchema);
 
 module.exports = Vote;
