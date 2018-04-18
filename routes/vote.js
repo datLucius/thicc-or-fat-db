@@ -39,7 +39,7 @@ vote.post('/poll', function(req, res) {
     'thicc': 0,
     'fat': 0
   }
-  //  format as a task
+  //  format as a poll
   var formattedPoll = Vote(newPoll);
   //  send to db
   saveNewPoll(formattedPoll, res).then(function(pollId) {
@@ -47,7 +47,7 @@ vote.post('/poll', function(req, res) {
   });
 });
 
-// GET ALL TASKS
+// GET POLL
 vote.get('/', function(req, res) {
   Vote.find({}, function(err, poll) {
     if (err) {
@@ -60,10 +60,10 @@ vote.get('/', function(req, res) {
 
 // UPDATE POLL
 vote.post('/update', function(req, res) {
-  var id = 1;
+  var id = "5ad78a40f36d28165c05ec29";
   var updateVote = req.body.vote;
   if(updateVote === "thicc") {
-    Task.findByIdAndUpdate(id, {$inc: { 'thicc': 1 }}, function(err, poll) {
+    Vote.findByIdAndUpdate(id, {$inc: { 'thicc': 1 }}, function(err, poll) {
       if (err) {
         res.send(err);
       } else {
@@ -72,7 +72,7 @@ vote.post('/update', function(req, res) {
     })
   }
   else if(updateVote === "fat") {
-    Task.findByIdAndUpdate(id, {$inc: { 'fat': 1 }}, function(err, poll) {
+    Vote.findByIdAndUpdate(id, {$inc: { 'fat': 1 }}, function(err, poll) {
       if (err) {
         res.send(err);
       } else {
