@@ -62,7 +62,7 @@ vote.get('/', function(req, res) {
 vote.post('/update', function(req, res) {
   var id = 1;
   var updateVote = req.body.vote;
-  if(updateVote.type === "thicc") {
+  if(updateVote === "thicc") {
     Task.findByIdAndUpdate(id, {$inc: { 'thicc': 1 }}, function(err, poll) {
       if (err) {
         res.send(err);
@@ -71,7 +71,7 @@ vote.post('/update', function(req, res) {
       }
     })
   }
-  else if(updateVote.type === "fat") {
+  else if(updateVote === "fat") {
     Task.findByIdAndUpdate(id, {$inc: { 'fat': 1 }}, function(err, poll) {
       if (err) {
         res.send(err);
