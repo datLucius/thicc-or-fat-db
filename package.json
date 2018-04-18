@@ -1,0 +1,24 @@
+{
+  "name": "thicc-db",
+  "version": "1.0.0",
+  "description": "server to track thicc and fat votes for Trump",
+  "main": "server.js",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.1",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "thicc"
+  ],
+  "author": "datLucius",
+  "license": "ISC"
+}
